@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="CSS/cabecera.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+</head>
+
+
+<script>
+    function NumText(string){//solo letras y numeros
+    var out = '';
+    //Se añaden las letras validas
+    var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890';//Caracteres validos
+    
+    for (var i=0; i<string.length; i++)
+       if (filtro.indexOf(string.charAt(i)) != -1) 
+         out += string.charAt(i);
+    return out;
+}
+    </script>
+
+
+<body>
+
+    
+    <div class="col-md-6 offset-md-3 position-relative">
+        
+   <form class="sombra" action="../index.php" method="post" >
+   
+    
+    <img src="../img/cufri_l.png" alt="LOGO" width="250px" height="200px">
+
+   <p>Usuario <input type="text" placeholder="Ingrese su usuario" name="usuario" 
+    onkeyup="javascript:this.value=NumText(this.value);" required></p>
+
+   <p>Contraseña <input type="password" placeholder="Ingrese su contraseña" name="pass" ></p>
+   
+   <input type="submit" value="Ingresar">
+   
+   </form> 
+</div>
+
+</body>
+
+
+</html>
